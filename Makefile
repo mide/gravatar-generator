@@ -1,5 +1,5 @@
 all: resize
-resize: icon-512.png icon-256.png icon-128.png icon-64.png icon-32.png icon-16.png
+resize: icon-512.png icon-256.png icon-128.png icon-064.png icon-032.png icon-016.png
 
 background.txt:
 	< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c 5000 | fold -w 100 > background.txt
@@ -23,14 +23,14 @@ icon-256.png: icon.png
 icon-128.png: icon.png
 	convert icon.png -resize 128x128 icon-128.png
 
-icon-64.png: icon.png
-	convert icon.png -resize 64x64 icon-64.png
+icon-064.png: icon.png
+	convert icon.png -resize 64x64 icon-064.png
 
-icon-32.png: icon.png
-	convert icon.png -resize 32x32 icon-32.png
+icon-032.png: icon.png
+	convert icon.png -resize 32x32 icon-032.png
 
-icon-16.png: icon.png
-	convert icon.png -resize 16x16 icon-16.png
+icon-016.png: icon.png
+	convert icon.png -resize 16x16 icon-016.png
 
 clean:
 	rm -vf *.png
